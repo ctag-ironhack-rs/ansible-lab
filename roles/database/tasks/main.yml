@@ -1,0 +1,15 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/database
+
+- name: Instalar MySQL
+  apt:
+    name: mysql-server
+    state: present
+    update_cache: true
+
+- name: Asegurar que MySQL está en ejecución
+  service:
+    name: mysql
+    state: started
+    enabled: true
